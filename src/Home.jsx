@@ -9,6 +9,8 @@ import DarkModeSwitcher from './components/DarkModeSwitcher'
 
 export default function Home() {
   const [businessCardImage, setBusinessCardImage] = useState('/images/cornell-seal-black.svg')
+  const [name, setNameCard] = useState("Ezra Cornell");
+  const [email, setEmailCard] = useState("ec@cornell.edu");
 
   return (
     <main>
@@ -24,11 +26,15 @@ export default function Home() {
       <ImageSelector onChange={(url) => setBusinessCardImage(url)} />
       <div className="form-group">
         <label htmlFor="name">Name:</label>
-        <input id="name" />
+        <input id = "name"
+        value={name}
+        onChange={(e) => setNameCard(e.target.value)}/>
       </div>
       <div className="form-group">
         <label htmlFor="email">Email:</label>
-        <input id="email" type="email" />
+        <input value = {email}
+        id = "email"
+        onChange={(e) => setEmailCard(e.target.value)}/>
       </div>
 
       <h2>Gallery Example</h2>
