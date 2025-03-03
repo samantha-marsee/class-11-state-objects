@@ -34,15 +34,14 @@ export default function Home() {
         <label htmlFor="name">Name:</label>
         <input id = "name"
         value={cardInfo.name}
-        //onChange={(e) => setNameCard(e.target.value)}
+        onChange={(e) => cardInfo.name(e.target.value)}
         />
       </div>
       <div className="form-group">
         <label htmlFor="email">Email:</label>
         <input value = {cardInfo.email}
         id = "email"
-       // onChange={(e) => setEmailCard(e.target.value)
-       />
+        onChange={(e) => cardInfo.email(e.target.value)}/>
       </div>
 
       <h2>Gallery Example</h2>
