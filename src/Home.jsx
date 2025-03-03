@@ -28,7 +28,9 @@ export default function Home() {
         description={cardInfo.description}
       />
       <ImageSelector
-      // onChange={(url) => setBusinessCardImage(url)}
+      onChange={(url) => setCardInfo((v) => ({
+        ...v, image:url
+      }))}
       />
       <div className="form-group">
         <label htmlFor="name">Name:</label>
