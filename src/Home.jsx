@@ -8,9 +8,13 @@ import ChatBot from './components/ChatBot'
 import DarkModeSwitcher from './components/DarkModeSwitcher'
 
 export default function Home() {
-  const [businessCardImage, setBusinessCardImage] = useState('/images/cornell-seal-black.svg')
-  const [name, setNameCard] = useState("Ezra Cornell");
-  const [email, setEmailCard] = useState("ec@cornell.edu");
+
+  const[cardInfo, setCardInfo]=useState({
+    name:"Sam Marsee",
+    email:"sam572@cornell.edu",
+    description:"Sam is a student at Cornell",
+    image:"images/cornell-seal-red.svg"
+    })
 
   return (
     <main>
@@ -18,23 +22,27 @@ export default function Home() {
 
       <h2>Business Card</h2>
       <BusinessCard
-        image={businessCardImage}
-        name="Ezra Cornell"
-        email="ezra@cornell.edu"
-        description="Ezra Cornell co-founded Cornell University in 1865."
+        image={cardInfo.image}
+        name={cardInfo.name}
+        email={cardInfo.email}
+        description={cardInfo.description}
       />
-      <ImageSelector onChange={(url) => setBusinessCardImage(url)} />
+      <ImageSelector
+      // onChange={(url) => setBusinessCardImage(url)}
+      />
       <div className="form-group">
         <label htmlFor="name">Name:</label>
         <input id = "name"
-        value={name}
-        onChange={(e) => setNameCard(e.target.value)}/>
+        value={cardInfo.name}
+        //onChange={(e) => setNameCard(e.target.value)}
+        />
       </div>
       <div className="form-group">
         <label htmlFor="email">Email:</label>
-        <input value = {email}
+        <input value = {cardInfo.email}
         id = "email"
-        onChange={(e) => setEmailCard(e.target.value)}/>
+       // onChange={(e) => setEmailCard(e.target.value)
+       />
       </div>
 
       <h2>Gallery Example</h2>
